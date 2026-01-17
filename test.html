@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button Click Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 10px 14px; margin-right: 10px; cursor: pointer; }
+    #box {
+      margin-top: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: inline-block;
+      min-width: 220px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Button Click (Internal JS)</h2>
+
+  <button id="btnHello">Say Hello</button>
+  <button id="btnAdd">+1 Counter</button>
+  <button id="btnReset">Reset</button>
+
+  <p id="myParagraph">This is a paragraph. </p>
+
+  <div id="box">
+    <p id="message">Click a button to see something happen.</p>
+    <p>Counter: <strong id="counter">0</strong></p>
+  </div>
+
+
+
+
+
+  <!-- Internal JavaScript -->
+  <script>
+
+    const btnHello = document.getElementById("btnHello");
+    const btnAdd = document.getElementById("btnAdd");
+    const btnReset = document.getElementById("btnReset");
+
+    const message = document.getElementById("message");
+    const counterEl = document.getElementById("counter");
+
+    let count = 0;
+
+
+    // Button click: increase counter
+    btnAdd.addEventListener("click", function () {
+      count = count + 1;
+      counterEl.textContent = String(count);
+      message.textContent = "Counter increased!";
+    });
+
+    // Button click: reset everything
+    btnReset.addEventListener("click", function () {
+      count = 0;
+      counterEl.textContent = "0";
+      message.textContent = "Reset done. Click a button again.";
+    });
+
+
+  </script>
+
+</body>
+</html>
+ufc-jubs-juo
